@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">DataStore</string>
     <string name="input_something">input something</string>
+    <string name="key">key</string>
+    <string name="vaule">value</string>
+    <string name="write_sp">write_sp</string>
+    <string name="read_sp">read_sp</string>
+    <string name="read_file">read_file</string>
+    <string name="write_file">write_file</string>
 </resources>

@@ -5,8 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yu.datastore.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/id_ll_file"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/id_et_key"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/key" />
+        <EditText
+            android:id="@+id/id_et_value"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/vaule" />
+        <Button
+            android:id="@+id/btn_write_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="write_sp"
+            android:hint="@string/write_sp" />
+        <Button
+            android:id="@+id/btn_read_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="read_sp"
+            android:hint="@string/read_sp" />
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/id_ll_file"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -19,7 +57,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/input_something" />
+            android:hint="@string/input_something" />
 
         <Button
             android:id="@+id/btn_write_file"
@@ -27,14 +65,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:onClick="write_file"
-            android:text="write_file" />
+            android:hint="@string/write_file" />
         <Button
             android:id="@+id/btn_read_file"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:onClick="read_file"
-            android:text="read_file" />
+            android:hint="@string/read_file" />
     </LinearLayout>
 
 
