@@ -1,4 +1,4 @@
-package com.yu.datastore;
+package com.yu.datastore.utils;
 
 import android.content.Context;
 
