@@ -24,22 +24,22 @@ import java.util.List;
  * 数据存储技术
  */
 public class MainActivity extends AppCompatActivity {
-    private EditText mEtFile,mEtKeySp,mEtValueSp;
-    private Button mReadButton, mWriteButton,mReadButtonSp, mWriteButtonSp;
+    private EditText mEtFile, mEtKeySp, mEtValueSp;
+    private Button mReadButton, mWriteButton, mReadButtonSp, mWriteButtonSp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    mEtFile = (EditText) findViewById(R.id.id_et_file);
-    mReadButton = (Button) findViewById(R.id.btn_read_file);
-    mWriteButton = (Button) findViewById(R.id.btn_write_file);
-    mReadButtonSp = (Button) findViewById(R.id.btn_read_sp);
-    mWriteButton = (Button) findViewById(R.id.btn_write_sp);
-    mEtKeySp = (EditText) findViewById(R.id.id_et_key);
-    mEtValueSp = (EditText) findViewById(R.id.id_et_value);
-}
+        mEtFile = (EditText) findViewById(R.id.id_et_file);
+        mReadButton = (Button) findViewById(R.id.btn_read_file);
+        mWriteButton = (Button) findViewById(R.id.btn_write_file);
+        mReadButtonSp = (Button) findViewById(R.id.btn_read_sp);
+        mWriteButton = (Button) findViewById(R.id.btn_write_sp);
+        mEtKeySp = (EditText) findViewById(R.id.id_et_key);
+        mEtValueSp = (EditText) findViewById(R.id.id_et_value);
+    }
 
     public void write_file(View view) {
         String input = mEtFile.getText().toString();
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void read_file(View view) {
-        String content = FileUtils.getFileContent(this,"file.txt");
+        String content = FileUtils.getFileContent(this, "file.txt");
         mEtFile.setText(content);
     }
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         SpUtils.getInstance(this).putString(key, value);
     }
 
-//------------- helper数据库操作 --------------
+    //------------- helper数据库操作 --------------
     public void write_db(View view) {
         DBHelper helper = new DBHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void update_lp(View view) {
         Book book = new Book();
-       // book.setPages(800);
-       // book.updateAll("price > ?", "69");
+        // book.setPages(800);
+        // book.updateAll("price > ?", "69");
 
         book.setToDefault("price");  // 恢复默认值
         book.updateAll();
@@ -142,10 +142,29 @@ public class MainActivity extends AppCompatActivity {
     public void delete_lp(View view) {
         DataSupport.deleteAll(Book.class, "name=?", "first line code");
     }
+
     public void query_lp(View view) {
         List<Book> books = DataSupport.findAll(Book.class);
         for (Book book : books) {
             Log.e("TAG", book.toString());
         }
+
+        // select选择列
+//        List<Book> bookList = DataSupport.select("name", "author").find(Book.class);
+        // where范围
+//        List<Book> bookList = DataSupport.where("price > ?", "69").find(Book.class);
+        // limit 限制查询条目,偏移2
+//        List<Book> bookList = DataSupport.limit(5).offset(2).find(Book.class);
+
+        List<Book> bookList = DataSupport.select("name", "author").
+                where("price > ?", "69")
+                .order("pages")  // 按pages排升序 （pages desc 降序）
+                .limit(20)  // 限制查询20条
+                .offset(10)  // 起始查询偏移10
+                .find(Book.class);
+
+        // 对sql语句的支持
+//        DataSupport.findBySQL("select* from book");
+
     }
 }
