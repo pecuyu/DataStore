@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- litepal config : xml and application -->
+<litepal>
+    <dbname value="person"/>
+    <version value="1" />
+</litepal>
