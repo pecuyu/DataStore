@@ -5,8 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yu.datastore.MainActivity">
+    <LinearLayout
+        android:id="@+id/id_ll_litepal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/id_ll_db"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_open_lp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="delete_lp"
+            android:text="@string/delete_lp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_query_lp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="query_lp"
+            android:text="@string/query_lp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_write_lp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="write_lp"
+            android:text="@string/write_lp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_read_lp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="update_lp"
+            android:text="@string/update_lp"
+            android:textAllCaps="false" />
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/id_ll_db"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/id_ll_sp"

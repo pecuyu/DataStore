@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- litepal config : xml and application -->
+<litepal>
+    <dbname value="book_info" ></dbname>
+    <version value="1" ></version>
+    <list>
+        <!-- 对Book类的映射 -->
+        <mapping class="com.yu.datastore.litepal.Book" />
+    </list>
+</litepal>

@@ -11,9 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.yu.datastore.litepal.Book;
 import com.yu.datastore.utils.DBHelper;
 import com.yu.datastore.utils.FileUtils;
 import com.yu.datastore.utils.SpUtils;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 /**
  * 数据存储技术
@@ -65,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         SpUtils.getInstance(this).putString(key, value);
     }
 
-//------------- 数据库操作 --------------
+//------------- helper数据库操作 --------------
     public void write_db(View view) {
         DBHelper helper = new DBHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -116,5 +121,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //    --------------lietpal 数据库操作-------------------
 
+    public void write_lp(View view) {
+        Book book = new Book("first line code", "guolin", 66.6f, 580);
+        book.save();
+        book = new Book("the art of android developing explore", "ryg", 69.6f, 490);
+        book.save();
+    }
+
+    public void update_lp(View view) {
+        Book book = new Book();
+       // book.setPages(800);
+       // book.updateAll("price > ?", "69");
+
+        book.setToDefault("price");  // 恢复默认值
+        book.updateAll();
+    }
+
+    public void delete_lp(View view) {
+        DataSupport.deleteAll(Book.class, "name=?", "first line code");
+    }
+    public void query_lp(View view) {
+        List<Book> books = DataSupport.findAll(Book.class);
+        for (Book book : books) {
+            Log.e("TAG", book.toString());
+        }
+    }
 }

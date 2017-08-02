@@ -13,4 +13,8 @@
     <string name="write_db">write_db</string>
     <string name="delete_db">delete_db</string>
     <string name="update_db">update_db</string>
+    <string name="delete_lp">delete_lp</string>
+    <string name="query_lp">query_lp</string>
+    <string name="write_lp">write_lp</string>
+    <string name="update_lp">update_lp</string>
 </resources>
