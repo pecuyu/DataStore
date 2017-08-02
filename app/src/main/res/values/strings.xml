@@ -7,4 +7,10 @@
     <string name="read_sp">read_sp</string>
     <string name="read_file">read_file</string>
     <string name="write_file">write_file</string>
+    <string name="read_db">read_db</string>
+    <string name="query_db">query_db</string>
+    <string name="open_db">open_db</string>
+    <string name="write_db">write_db</string>
+    <string name="delete_db">delete_db</string>
+    <string name="update_db">update_db</string>
 </resources>

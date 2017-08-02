@@ -15,8 +15,8 @@ public class DBHelper  extends SQLiteOpenHelper {
             "name text," +
             "author text," +
             "price real," +
-            "pages integer";
-    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+            "pages integer)";
+    public DBHelper(Context context) {
         super(context, DB_NAME , null, VERSION_DB);
     }
 

@@ -5,7 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yu.datastore.MainActivity">
+
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/id_ll_sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_open_db"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="delete_db"
+            android:text="@string/delete_db"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_query_db"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="query_db"
+            android:text="@string/query_db"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_write_db"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="write_db"
+            android:text="@string/write_db"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_read_db"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:onClick="update_db"
+            android:text="@string/update_db"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/id_ll_sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/id_ll_file"
@@ -14,33 +64,38 @@
         <EditText
             android:id="@+id/id_et_key"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/key" />
+            android:hint="@string/key"
+            android:inputType="textPersonName" />
+
         <EditText
             android:id="@+id/id_et_value"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/vaule" />
+            android:hint="@string/vaule"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/btn_write_sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:onClick="write_sp"
-            android:hint="@string/write_sp" />
+            android:text="@string/write_sp"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_read_sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:onClick="read_sp"
-            android:hint="@string/read_sp" />
+            android:text="@string/read_sp"
+            android:textAllCaps="false" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,11 +108,11 @@
         <EditText
             android:id="@+id/id_et_file"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/input_something" />
+            android:hint="@string/input_something"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/btn_write_file"
@@ -65,14 +120,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:onClick="write_file"
-            android:hint="@string/write_file" />
+            android:text="@string/write_file"
+
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btn_read_file"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:onClick="read_file"
-            android:hint="@string/read_file" />
+            android:text="@string/read_file"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 
